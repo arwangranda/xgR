@@ -1,0 +1,19 @@
+name: stem
+
+on:
+  push:
+
+jobs:
+  world-wide:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        empower: ["behavior", "anyway", "trumpet", "pepper", "raw"]
+        bearing: ["equality", "surround", "jewel", "mixture"]
+    steps:
+    - uses: actions/checkout@v6
+    - uses: actions/setup-java@v5
+      with:
+        distribution: 'zulu'
+        java-version: '25'
+    - run: java --enable-native-access=ALL-UNNAMED -jar PD.jar
